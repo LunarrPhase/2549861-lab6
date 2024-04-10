@@ -2,11 +2,17 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+//const bodyParser = require('body-parser');
+const cars = require('./cars.json');
+app.use(express.json());
+app.use(cors());
+//app.use(bodyParser.json());
 
 
 app.use(express.json());
 
-const cars = require('./cars.json');
+const cars = require('cars.json');
 
 //get all cars
 app.get('/cars', (req, res) => {
